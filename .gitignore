@@ -1,0 +1,15 @@
+# Object files and build directories
+*.o
+obj/
+build/
+
+# Executable
+nn_from_scratch
+
+# IDE
+.vscode/
+.idea/
+
+# OS specific
+.DS_Store
+*~
