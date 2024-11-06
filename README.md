@@ -9,6 +9,7 @@ A C++ implementation of a neural network built from scratch using the Eigen libr
 - Make
 
 ### For Arch Linux
+
 ```bash
 sudo pacman -S eigen
 ```
@@ -36,8 +37,14 @@ This will create the executable `nn_from_scratch` in the project root directory.
 ## Clean Build
 
 To clean and rebuild the project:
+
 ```bash
 make clean
-make
+make all
 ```
 
+If confused try
+
+```bash
+make help
+```
