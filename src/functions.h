@@ -1,22 +1,38 @@
 #pragma once
-
 #include <eigen3/Eigen/Dense>
-#include <iostream>
-using namespace Eigen;
 
 namespace functions {
-VectorXd sigmoid(const VectorXd &v) { return 1.0 / (1.0 + (-v.array()).exp()); }
 
-VectorXd sigmoid_derivative(const VectorXd &v) {
-  return sigmoid(v).array() * (1.0 - sigmoid(v).array());
-}
+/**
+ * Applies the sigmoid activation function element-wise
+ * @param v Input vector
+ * @return Vector with sigmoid function applied to each element
+ */
+Eigen::VectorXd sigmoid(const Eigen::VectorXd &v);
 
-double error_function(const VectorXd &output, const VectorXd &target) {
-  return 0.5 * (output - target).squaredNorm();
-}
+/**
+ * Computes the derivative of the sigmoid function element-wise
+ * @param v Input vector
+ * @return Vector with sigmoid derivative applied to each element
+ */
+Eigen::VectorXd sigmoid_derivative(const Eigen::VectorXd &v);
 
-VectorXd error_function_derivative(const VectorXd &output,
-                                   const VectorXd &target) {
-  return output - target;
-}
+/**
+ * Calculates the Mean Squared Error between output and target
+ * @param output Network output vector
+ * @param target Target vector
+ * @return Scalar error value
+ */
+double error_function(const Eigen::VectorXd &output,
+                      const Eigen::VectorXd &target);
+
+/**
+ * Computes the derivative of the error function
+ * @param output Network output vector
+ * @param target Target vector
+ * @return Vector of error derivatives
+ */
+Eigen::VectorXd error_function_derivative(const Eigen::VectorXd &output,
+                                          const Eigen::VectorXd &target);
+
 } // namespace functions
