@@ -17,7 +17,7 @@ sudo pacman -S eigen
 ## Building
 
 ```bash
-make
+make all
 ```
 
 This will create the executable `nn_from_scratch` in the project root directory.
